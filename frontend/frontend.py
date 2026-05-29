@@ -11,8 +11,6 @@ BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
 st.title("Prédiction précoce de la maladie d'Alzheimer")
 st.write("Veuillez renseigner les caractéristiques du patient pour obtenir une estimation du risque.")
 
-st.markdown("---")
-st.header("Informations cliniques")
 
 with st.expander("Scores cognitifs"):
     col1, col2 = st.columns(2)
@@ -119,10 +117,6 @@ with st.expander("Signes vitaux et mesures"):
             help="Pression du sang entre deux battements."
         )
 
-
-
-st.markdown("---")
-st.header("Biomarqueurs")
 
 with st.expander("Mesures biologiques"):
     col1, col2 = st.columns(2)
