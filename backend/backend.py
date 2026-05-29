@@ -2,6 +2,38 @@ from fastapi import FastAPI
 import joblib
 import pandas as pd
 from pathlib import Path
+from pydantic import BaseModel, Field
+
+class PredictionData(BaseModel):
+    CDGLOBAL: float = Field(example=0)
+    CDMEMORY: float = Field(example=0)
+    CDRSB: float = Field(example=0)
+    CDJUDGE: float = Field(example=0)
+    CDHOME: float = Field(example=0)
+    CDCOMMUN: float = Field(example=0)
+
+    MMSCORE: float = Field(example=29)
+    TOTSCORE: float = Field(example=12)
+    TOTAL13: float = Field(example=20)
+
+    WORD2DL: float = Field(example=0)
+
+    ST112SV: float = Field(example=4184.10)
+    ST120SV: float = Field(example=6224)
+    ST101SV: float = Field(example=1819.45)
+    ST125SV: float = Field(example=24.50)
+
+    VSWEIGHT: float = Field(example=94)
+    VSHEIGHT: float = Field(example=170)
+
+    VSBPSYS: float = Field(example=150)
+    VSBPDIA: float = Field(example=64)
+
+    VSPULSE: float = Field(example=64)
+
+class PredictionResponse(BaseModel):
+    prediction: int = Field(example=0)
+    probabilite: float = Field(example=14.03)
 
 app = FastAPI()
 
@@ -24,9 +56,9 @@ model = get_latest_model()
 def health():
     return {"status": "ok"}
 
-@app.post("/predict")
-def predict(data: dict):
-    df = pd.DataFrame([data])
+@app.post("/predict", response_model=PredictionResponse)
+def predict(data: PredictionData):
+    df = pd.DataFrame([data.dict()])
 
     if hasattr(model, "predict_proba"):
         raw_proba = model.predict_proba(df)
