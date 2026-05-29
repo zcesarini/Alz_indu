@@ -6,9 +6,6 @@ __pycache__/
 .pytest_cache/
 artifacts/*.joblib
 
-# Données et modèles locaux
-artifacts/
-*.joblib
 
 # Système / IDE
 .vscode/
