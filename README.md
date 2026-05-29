@@ -2,15 +2,15 @@
 
 ## Vue d'ensemble
 
-Ce depot contient un pipeline ML pour un cas Alzheimer avec preprocessing, modelisation, serialisation des artefacts et interface web de pilotage.
+Ce dépôt contient un pipeline ML pour un cas Alzheimer avec preprocessing, modelisation, serialisation des artefacts et interface web de pilotage.
 
-Le projet n'est plus limite aux notebooks. Il peut maintenant etre utilise comme une petite application operationnelle pour :
+Ce projet n'est plus limité aux notebooks. Il peut maintenant être utilise comme une petite application operationnelle pour :
 
 - lancer une prediction unitaire via formulaire.
 
 ## Structure principale
 
-- `train_model.py` : script principal d'entrainement, d'evaluation, comparaison et sauvegarde.
+- `train_model.py` : script principal d'entrainement, d'évaluation, comparaison et sauvegarde.
 - `comparatif_model.py` : graphique de comparaison des metrics.
 - `frontend/frontend.py` : serveur web local de l'interface applicative.
 - `backend/backend.py` : API FastAPI permettant de charger le modèle de machine learning et d’effectuer les prédictions de risque de maladie d’Alzheimer.
@@ -19,15 +19,15 @@ Le projet n'est plus limite aux notebooks. Il peut maintenant etre utilise comme
   - variable cible du modèle (`TARGET`)
   - paramètres de séparation des données (`TEST_SIZE`, `RANDOM_STATE`)
   - liste des variables explicatives utilisées pour l’entraînement du modèle (`FEATURES`)
-- `src/data_loader` : jeux de donnees preprocesses via supabase.
-- `artifacts/` : modeles serialises, metadonnees JSON, learning curve et confusion matrix.
+- `src/data_loader.py` : chargement et récupération des données préprocessées depuis Supabase.
+- `artifacts/` : modèles sérialises, métadonnées JSON, courbes d’apprentissage et matrices de confusion.
 
 ## Lancement rapide
 
 1. Activer l'environnement virtuel :
 
 ```powershell
-& ".venv\Scripts\Activate.ps1  "
+& ".venv\Scripts\Activate.ps1"
 ```
 
 2. Installer les dependances :
@@ -48,6 +48,16 @@ python train_model.py
 python comparatif_model.py
 ```
 
+5. Lancer l'interface :
+
+```powershell
+docker compose up -d --build  
+```
+L'application sera accessible sur :
+
+- Frontend Streamlit : http://localhost:8501
+- API FastAPI : http://localhost:8000
+- Documentation Swagger : http://localhost:8000/docs
 
 ## Interface web
 
@@ -60,9 +70,9 @@ L'interface propose 4 zones principales :
 
 ## Dependances
 
-Les dependances applicatives sont declarees dans `requirements.txt`.
+Les dépendances applicatives sont déclarees dans `requirements.txt`.
 
 ## Notes
 
-- Le dernier modele disponible est detecte automatiquement depuis le fichiers `meilleur_model.txt` enregistré prendant l'entrainement.
+- Le dernier modèle disponible est détecté automatiquement depuis le fichier `meilleur_model.txt` enregistré pendant l'entraînement.
 
