@@ -16,6 +16,8 @@ COPY src/transformation.py ./src/transformation.py
 COPY src/pipelines.py ./src/pipelines.py
 COPY src/config.py ./src/config.py
 COPY src/__init__.py ./src/__init__.py
+COPY artifacts/meilleur_model.txt ./artifacts/meilleur_model.txt
+COPY artifacts/*.joblib ./artifacts/
 
 # 6. Exposer le port FastAPI
 EXPOSE 8000
