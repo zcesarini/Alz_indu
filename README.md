@@ -42,13 +42,7 @@ python -m pip install -r requirements.txt
 python train_model.py
 ```
 
-4. Entrainer ou re-entrainer un modele :
-
-```powershell
-python train_model.py
-```
-
-5. Lancer le tableau de bord des metrics :
+4. Lancer le tableau de bord des metrics :
 
 ```powershell
 python comparatif_model.py
