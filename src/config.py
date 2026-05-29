@@ -1,0 +1,20 @@
+from pathlib import Path
+
+ARTIFACTS    = Path("artifacts")
+TARGET       = "DIAGNOSIS"
+TEST_SIZE    = 0.2
+RANDOM_STATE = 42
+
+FEATURES = [
+    "CDGLOBAL", "CDMEMORY", "CDRSB",     "TOTSCORE", "TOTAL13",
+    "CDJUDGE",  "MMSCORE",  "VSWEIGHT",  "VSPULSE",'VSHEIGHT',
+    "CDHOME",   "VSBPSYS",  "CDCOMMUN",  "VSBPDIA",
+    "ST112SV",  "ST120SV",  "ST101SV",   "ST125SV",   "WORD2DL"
+]
+
+##FEATURES = [
+#    "CDGLOBAL", "CDMEMORY", "CDRSB",     "TOTSCORE", "TOTAL13",
+#    "CDJUDGE",  "MMSCORE",  "VSWEIGHT",  "RtensionA", "VSPULSE",
+#    "CDHOME",   "VSBPSYS",  "pressionP", "CDCOMMUN",  "VSBPDIA",
+#    "ST112SV",  "ST120SV",  "ST101SV",   "ST125SV",   "WORD2DL", "IMC"
+#]
