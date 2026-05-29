@@ -49,6 +49,7 @@ python comparatif_model.py
 ```
 
 5. Lancer l'interface :
+Ouvrir docker desktop
 
 ```powershell
 docker compose up -d --build  
