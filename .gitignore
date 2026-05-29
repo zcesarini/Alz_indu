@@ -4,16 +4,11 @@ venv/
 __pycache__/
 *.pyc
 .pytest_cache/
-.ruff_cache/
 artifacts/*.joblib
 
 # Données et modèles locaux
 artifacts/
 *.joblib
-
-# Secrets
-.env
-*.key
 
 # Système / IDE
 .vscode/
