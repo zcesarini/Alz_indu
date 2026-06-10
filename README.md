@@ -7,6 +7,7 @@ Ce dépôt contient un pipeline ML pour un cas Alzheimer avec preprocessing, mod
 Ce projet n'est plus limité aux notebooks. Il peut maintenant être utilise comme une petite application operationnelle pour :
 
 - lancer une prediction unitaire via formulaire.
+- visualiser les dashboard Power BI
 
 ## Structure principale
 
