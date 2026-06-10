@@ -49,12 +49,20 @@ python comparatif_model.py
 ```
 
 5. Lancer l'interface :
+## en ligne
+https://alz-indu-frontend.onrender.com/  
+
+Si message d'erreur relancer les services render :  
+- backend (erreur à la prédiction) https://dashboard.render.com/web/srv-d8cs776k1jcs73a5jq5g/settings  
+- frontend (erreur au chargement de la page streamlit) https://dashboard.render.com/web/srv-d8crcu6k1jcs73a4h6vg  
+
+## en local 
 Ouvrir docker desktop
 
 ```powershell
 docker compose up -d --build  
 ```
-L'application sera accessible sur :
+L'application sera accessible en local sur :
 
 - Frontend Streamlit : http://localhost:8501
 - API FastAPI : http://localhost:8000
@@ -62,8 +70,9 @@ L'application sera accessible sur :
 
 ## Interface web
 
-L'interface propose 4 zones principales :
+L'interface propose 5 zones principales :
 
+- `Affichage du dashboard Power BI` 
 - `Scores cognitifs` 
 - `Signes vitaux et mesures`
 - `Mesures biologiques`
