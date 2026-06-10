@@ -4,11 +4,14 @@ import os
 
 
 BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
-
-
+POWERBI_URL = "https://app.powerbi.com/view?r=eyJrIjoiMGRjMzkxZDAtMTk3ZS00MTU0LThiNzAtNDQ5ZjUxMjg2ZjRiIiwidCI6IjM3MzAxNmY4LTc5YTktNGVlZC04MGQyLTEwMGNlOTQ4ZDk2MCIsImMiOjl9"
 
 
 st.title("Prédiction précoce de la maladie d'Alzheimer")
+
+
+st.link_button("Consulter le dashboard Power BI",POWERBI_URL)
+
 st.write("Veuillez renseigner les caractéristiques du patient pour obtenir une estimation du risque.")
 
 
