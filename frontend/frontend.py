@@ -4,7 +4,7 @@ import os
 
 
 BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
-POWERBI_URL = "https://app.powerbi.com/view?r=eyJrIjoiY2Q0ODFiOWItMzYzYy00ODExLWIxOGItMjQwOTAxMjVkZjRhIiwidCI6IjM3MzAxNmY4LTc5YTktNGVlZC04MGQyLTEwMGNlOTQ4ZDk2MCIsImMiOjl9"
+POWERBI_URL = "https://app.powerbi.com/view?r=eyJrIjoiNDgyY2QxZjMtZjRlZS00N2Q3LTk1ZTgtNTQyNTc0YjhiZmE2IiwidCI6IjM3MzAxNmY4LTc5YTktNGVlZC04MGQyLTEwMGNlOTQ4ZDk2MCIsImMiOjl9"
 
 
 st.title("Prédiction précoce de la maladie d'Alzheimer")
