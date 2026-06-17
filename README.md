@@ -7,21 +7,44 @@ Ce dépôt contient un pipeline ML pour un cas Alzheimer avec preprocessing, mod
 Ce projet n'est plus limité aux notebooks. Il peut maintenant être utilise comme une petite application operationnelle pour :
 
 - lancer une prediction unitaire via formulaire.
-- visualiser les dashboard Power BI
+- et visualiser les dashboard Power BI des patients.
 
 ## Structure principale
 
-- `train_model.py` : script principal d'entrainement, d'évaluation, comparaison et sauvegarde.
-- `comparatif_model.py` : graphique de comparaison des metrics.
-- `frontend/frontend.py` : serveur web local de l'interface applicative.
-- `backend/backend.py` : API FastAPI permettant de charger le modèle de machine learning et d’effectuer les prédictions de risque de maladie d’Alzheimer.
-- `src/config.py` : contient les constantes globales du projet :
-  - chemin du dossier des artefacts (`ARTIFACTS`)
-  - variable cible du modèle (`TARGET`)
-  - paramètres de séparation des données (`TEST_SIZE`, `RANDOM_STATE`)
-  - liste des variables explicatives utilisées pour l’entraînement du modèle (`FEATURES`)
-- `src/data_loader.py` : chargement et récupération des données préprocessées depuis Supabase.
-- `artifacts/` : modèles sérialises, métadonnées JSON, courbes d’apprentissage et matrices de confusion.
+Code
+├── train_model.py           # Script principal : entraînement, évaluation, comparaison, sauvegarde
+├── comparatif_model.py      # Graphique comparatif des performances des modèles
+├── Docker-compose.yml       # Orchestration backend + frontend
+├── requirements.txt         # Dépendances globales
+│
+├── backend/                 # API FastAPI pour la prédiction
+│   ├── backend.py           # Endpoints /predict et /health
+│   ├── Dockerfile           # Image Docker backend
+│   └── requirements.txt     # Dépendances backend
+│
+├── frontend/                # Interface utilisateur Streamlit
+│   ├── frontend.py          # UI : upload, prédiction, visualisation
+│   ├── Dockerfile           # Image Docker frontend
+│   └── requirements.txt     # Dépendances frontend
+│
+├── src/                     # Code métier (ML + preprocessing)
+│   ├── config.py            # Constantes globales (ARTIFACTS, TARGET, FEATURES…)
+│   ├── data_loader.py       # Chargement des données depuis Supabase
+│   ├── pipelines.py         # Pipelines ML (scaling, encodage…)
+│   ├── train.py             # Fonctions d'entraînement
+│   ├── transformation.py    # Feature engineering / preprocessing
+│   └── save.py              # Sauvegarde des modèles et métriques
+│
+├── artifacts/               # Artefacts générés automatiquement
+│   ├── *_metrics.json       # Métriques des modèles
+│   ├── *_confusion_matrix.png # Matrices de confusion
+│   ├── *_learning_curve.png # Courbes d’apprentissage
+│   ├── *.joblib             # Modèles ML sérialisés
+│   ├── *.h5                 # Modèles Keras
+│   └── meilleur_model.txt   # Nom du meilleur modèle sélectionné
+│
+└── README.md                # Documentation du projet
+
 
 ## Lancement rapide
 
@@ -54,8 +77,8 @@ python comparatif_model.py
 https://alz-indu-frontend.onrender.com/  
 
 Si message d'erreur relancer les services render :  
-- backend (erreur à la prédiction) https://dashboard.render.com/web/srv-d8cs776k1jcs73a5jq5g/settings  
-- frontend (erreur au chargement de la page streamlit) https://dashboard.render.com/web/srv-d8crcu6k1jcs73a4h6vg  
+- backend (erreur à la prédiction)  https://dashboard.render.com/web/srv-d8crcu6k1jcs73a4h6vg 
+- frontend (erreur au chargement de la page streamlit) https://dashboard.render.com/web/srv-d8cs776k1jcs73a5jq5g/settings  
 
 ## en local 
 Ouvrir docker desktop
@@ -73,7 +96,7 @@ L'application sera accessible en local sur :
 
 L'interface propose 5 zones principales :
 
-- `Affichage du dashboard Power BI` 
+- `Affichage du dashboard Power BI des patients` 
 - `Scores cognitifs` 
 - `Signes vitaux et mesures`
 - `Mesures biologiques`
