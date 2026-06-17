@@ -36,15 +36,14 @@ Code
 │   └── save.py              # Sauvegarde des modèles et métriques
 │
 ├── artifacts/               # Artefacts générés automatiquement
-│   ├── *_metrics.json       # Métriques des modèles
-│   ├── *_confusion_matrix.png # Matrices de confusion
-│   ├── *_learning_curve.png # Courbes d’apprentissage
-│   ├── *.joblib             # Modèles ML sérialisés
-│   ├── *.h5                 # Modèles Keras
-│   └── meilleur_model.txt   # Nom du meilleur modèle sélectionné
+│   ├── *_metrics.json           # Métriques des modèles
+│   ├── *_confusion_matrix.png   # Matrices de confusion
+│   ├── *_learning_curve.png     # Courbes d’apprentissage
+│   ├── *.joblib                 # Modèles ML sérialisés (sklearn)
+│   ├── *.h5                     # Modèles Keras
+│   └── meilleur_model.txt       # Nom du meilleur modèle sélectionné
 │
 └── README.md                # Documentation du projet
-
 
 ## Lancement rapide
 
