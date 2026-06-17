@@ -10,6 +10,7 @@ Ce projet n'est plus limité aux notebooks. Il peut maintenant être utilise com
 - et visualiser les dashboard Power BI des patients.
 
 ## Structure principale
+```bash
 
 Code
 ├── train_model.py           # Script principal : entraînement, évaluation, comparaison, sauvegarde
@@ -44,7 +45,7 @@ Code
 │   └── meilleur_model.txt       # Nom du meilleur modèle sélectionné
 │
 └── README.md                # Documentation du projet
-
+```
 ## Lancement rapide
 
 1. Activer l'environnement virtuel :
