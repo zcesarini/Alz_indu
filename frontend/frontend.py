@@ -12,11 +12,6 @@ st.set_page_config(
 )
 
 with st.sidebar:
-    st.title("Alzheimer Predict")
-
-    st.info(
-        "Outil d'aide à la détection précoce de la maladie d'Alzheimer."
-    )
 
     st.markdown("""
 ### Comment utiliser ?
@@ -27,7 +22,7 @@ with st.sidebar:
 """)
 
     st.warning(
-        "Cet outil est une aide à la décision et ne remplace pas un diagnostic médical."
+        "⚠️ Avertissement : Cet outil est une aide à la décision. Il ne remplace pas le diagnostic médical."
     )
 
     st.link_button(
