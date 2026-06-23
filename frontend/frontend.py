@@ -35,14 +35,8 @@ with st.sidebar:
         POWERBI_URL,
         use_container_width=True
     )
+
 st.title("Prédiction précoce de la maladie d'Alzheimer")
-
-
-#st.link_button("Consulter le dashboard Power BI",POWERBI_URL)
-st.markdown(
-    f'<a href="{POWERBI_URL}">📊 Consulter le dashboard Power BI</a>',
-    unsafe_allow_html=True
-)
 
 st.write("Veuillez renseigner les caractéristiques du patient pour obtenir une estimation du risque.")
 
