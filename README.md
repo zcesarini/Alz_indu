@@ -11,7 +11,6 @@ Ce projet n'est plus limité aux notebooks. Il peut maintenant être utilise com
 
 ## Structure principale
 ```bash
-
 Code
 ├── train_model.py           # Script principal : entraînement, évaluation, comparaison, sauvegarde
 ├── comparatif_model.py      # Graphique comparatif des performances des modèles
@@ -37,16 +36,28 @@ Code
 │   └── save.py              # Sauvegarde des modèles et métriques
 │
 ├── artifacts/               # Artefacts générés automatiquement
-│   ├── *_metrics.json           # Métriques des modèles
-│   ├── *_confusion_matrix.png   # Matrices de confusion
-│   ├── *_learning_curve.png     # Courbes d’apprentissage
-│   ├── *.joblib                 # Modèles ML sérialisés (sklearn)
-│   └── meilleur_model.txt       # Nom du meilleur modèle sélectionné
+│   ├── *_metrics.json       # Métriques des modèles
+│   ├── *_confusion_matrix.png # Matrices de confusion
+│   ├── *_learning_curve.png # Courbes d’apprentissage
+│   ├── *.joblib             # Modèles ML sérialisés
+│   └── meilleur_model.txt   # Nom du meilleur modèle sélectionné
 │
 └── README.md                # Documentation du projet
+
 ```
 ## Lancement rapide
+Avant de lancer l'application, définir les variables d'environnement suivantes :
 
+```bash 
+Windows Bash
+setx SUPABASE_URL "https://********.supabase.co"
+setx SUPABASE_SERVICE_ROLE_KEY "***********"
+```
+```bash 
+MacOS Bash
+export SUPABASE_URL="https://********.supabase.co"
+export SUPABASE_SERVICE_ROLE_KEY="***********"
+```
 1. Activer l'environnement virtuel :
 
 ```powershell
@@ -95,7 +106,7 @@ L'application sera accessible en local sur :
 
 L'interface propose 5 zones principales :
 
-- `Affichage du dashboard Power BI des patients` 
+- `Affichage du dashboard Power BI` 
 - `Scores cognitifs` 
 - `Signes vitaux et mesures`
 - `Mesures biologiques`
