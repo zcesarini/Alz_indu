@@ -16,7 +16,7 @@ with st.sidebar:
     st.markdown("""
 ### Comment utiliser ?
 1. Renseignez les scores cognitifs
-2. Renseignez les signes vitaux
+2. Renseignez les signes vitaux et mesures
 3. Renseignez les mesures biologiques
 4. Cliquez sur **Calculer**
 """)
@@ -35,8 +35,13 @@ st.title("Prédiction précoce de la maladie d'Alzheimer")
 
 st.write("Veuillez renseigner les caractéristiques du patient pour obtenir une estimation du risque.")
 
+tab1, tab2, tab3 = st.tabs([
+    "Scores cognitifs",
+    "Signes vitaux et mesures",
+    "Mesures biologiques"
+])
 
-with st.expander("Scores cognitifs"):
+with tab1:
     col1, col2 = st.columns(2)
 
     with col1:
@@ -105,7 +110,7 @@ with st.expander("Scores cognitifs"):
 
 
 
-with st.expander("Signes vitaux et mesures"):
+with tab2:
     col1, col2 = st.columns(2)
 
     with col1:
@@ -142,7 +147,7 @@ with st.expander("Signes vitaux et mesures"):
         )
 
 
-with st.expander("Mesures biologiques"):
+with tab3:
     col1, col2 = st.columns(2)
 
     with col1:
